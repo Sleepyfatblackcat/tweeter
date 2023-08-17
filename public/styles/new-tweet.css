@@ -1,0 +1,35 @@
+.new-tweet {
+  background-color: #fadcdc;
+}
+
+form {
+  width: 90%;
+  margin-left: 5%;
+}
+#tweet-text {
+  width: 100%;
+  font-weight: bold;
+  background-color: #fadcdc;
+  border: none;
+  resize: none;
+  outline: none;
+}
+
+.new-tweet .border {
+  border-bottom: 3px solid rgb(85, 64, 64);
+}
+
+.new-tweet button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  margin: 0.5em 0 1em 0;
+  border: none;
+  font-family: 'Bungee', cursive;
+}
+
+
+.new-tweet .counter {
+  float: right;
+  margin: 0.5em 0 1em 0;
+  font-family: 'Bungee', cursive;
+}
