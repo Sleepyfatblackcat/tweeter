@@ -6,6 +6,7 @@ form {
   width: 90%;
   margin-left: 5%;
 }
+
 #tweet-text {
   width: 100%;
   font-weight: bold;
@@ -16,7 +17,7 @@ form {
 }
 
 .new-tweet .border {
-  border-bottom: 3px solid rgb(85, 64, 64);
+  border-bottom: 4px solid rgb(85, 64, 64);
 }
 
 .new-tweet button {
