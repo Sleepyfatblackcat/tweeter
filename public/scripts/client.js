@@ -4,19 +4,22 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escaper = function (str) {
+// Escape for preventing XSS
+const escaper = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+// Function to render tweets to main page
 const renderTweets = function(tweets) {
-  for(let i = 0; i < tweets.length; i++) {
+  for (let i = 0; i < tweets.length; i++) {
     let $tweet = createTweetElement(tweets[i]);
     $('.tweet-container').prepend($tweet);
   }
-}
+};
 
+// Function to create tweet element
 const createTweetElement = function(tweet) {
   let $tweet = `<article>
           <header>
@@ -35,39 +38,42 @@ const createTweetElement = function(tweet) {
               <span><i class="fa fa-heart"></i></span>
             </div>
           </footer>
-        </article>`
+        </article>`;
   return $tweet;
-}
+};
 
-$(document).ready( () => {
+// Function to make to load tweet from database using Ajax GET request
+const loadTweets = function() {
+  $.ajax({
+    method: 'GET',
+    url: "/tweets"
+  })
+    .then(function(tweets) {
+      renderTweets(tweets);
+    });
+};
+
+$(document).ready(() => {
+  // Event listener for submitting form
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
-    if($("#tweet-text").val().length > 140) {
-      $("#error").text("⚠️Tweet is too long. Please keep within 140 character limit.⚠️").slideDown('slow').addClass("active");;
-    } else if($("#tweet-text").val() === "" || $("#tweet-text").val().length === null) {
-      $("#error").text("⚠️Tweet text is empty!⚠️").slideDown('slow').addClass("active");;
+    // Tweet text validation
+    if ($("#tweet-text").val().length > 140) {
+      $("#error").text("⚠️Tweet is too long. Please keep within 140 character limit.⚠️").slideDown('slow').addClass("active");
+    } else if ($("#tweet-text").val() === "" || $("#tweet-text").val().length === null) {
+      $("#error").text("⚠️Tweet text is empty!⚠️").slideDown('slow').addClass("active");
     } else {
+      // Ajax POST request to send tweet to database
       $.ajax({
         method: 'POST',
         url: "/tweets",
         data: $(this).serialize()
       })
-      .then(function () {
-        $("#error").slideUp('slow').removeClass("active");;
-        loadTweets();
-      });
+        .then(function() {
+          $("#error").slideUp('slow').removeClass("active");
+          loadTweets();
+        });
     }
   });
-
-  const loadTweets = function() {
-    $.ajax({
-      method: 'GET',
-      url: "/tweets"
-    })
-    .then(function (tweets) {
-      renderTweets(tweets);
-    });
-  }
-
   loadTweets();
 });
