@@ -35,7 +35,7 @@
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <span class="header">Tweeter</span>
-      <div class="left-nav">
+      <div class="right-nav">
         <span class="text"><strong>Write</strong> a new tweet</span>
         <i class="fa-solid fa-angles-down"></i>
       </div>
@@ -56,6 +56,7 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form id="tweet-form" action="/tweets" method="POST">
+          <p id="error"></p>
           <label for="tweet-text"><strong>What are you humming about?<strong></label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="border"></div>
