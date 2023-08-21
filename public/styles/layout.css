@@ -26,8 +26,8 @@ body {
  */
  
 main {
-  width: 90%;
   margin-left: 5%;
+  margin-right: 5%;
   padding-bottom: 1em;
   background-color: #fadcdc;
 }

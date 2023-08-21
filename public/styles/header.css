@@ -1,7 +1,6 @@
 #profile {
   display: flex;
-  height: 520px;
-  width: 100%;
+  height: 400px;
   flex-direction: column;
   align-items: center;
   color: #FFFFFF;
@@ -11,7 +10,7 @@
 
 
 #profile .avatar {
-  padding-top: 150px;
+  padding-top: 40px;
 }
 
 #profile .name {
@@ -22,4 +21,26 @@
 
 #profile span {
   font-size: 150%;
+}
+
+/*
+ * CSS for responsive design
+ */
+
+@media only screen and (min-width: 1024px) {
+  #page {
+    display: flex;
+  }
+
+  #profile {
+    flex-grow: 1;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .container {
+    flex-grow: 2;
+    margin-left: 1em;
+  }
 }
