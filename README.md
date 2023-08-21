@@ -4,6 +4,12 @@ Tweeter is a simple, single-page Twitter clone.
 
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
+## Final Product
+
+!["Screenshot of new tweet submission"](https://github.com/Sleepyfatblackcat/tweeter/tree/master/docs/newtweet.PNG)
+!["Screenshot of tweet submission error"](https://github.com/Sleepyfatblackcat/tweeter/tree/master/docs/error.PNG)
+!["Screenshot of responsive design for smaller viewport"](https://github.com/Sleepyfatblackcat/tweeter/tree/master/docs/responsive.PNG)
+
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
@@ -16,3 +22,15 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- chance
+## App Features
+
+#### Creat new tweet
+Users can create new tweets that are within 140 characters
+
+#### View tweet
+Users can view tweets on the main page
+
+#### Responsive design for tablets
+Screens smaller than 1024px will have a different layout for user profile compared to larger screens
