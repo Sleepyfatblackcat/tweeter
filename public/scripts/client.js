@@ -48,7 +48,7 @@ const createTweetElement = function(tweet) {
           </header>
           <div class="tweet">${tweet.content.text}</div>
           <footer>
-            <span>${tweet.created_at}</span>
+            <span>${format(tweet.created_at)}</span>
             <div class="options">
               <span><i class="fa fa-flag"></i></span>
               <span><i class="fa fa-retweet"></i></span>
@@ -59,4 +59,26 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
-$(document).ready( () => {renderTweets(data);});
+const loadTweets = function() {
+  $.ajax({
+    method: 'GET',
+    url: "/tweets"
+  })
+  .then(function (tweets) {
+    renderTweets(tweets);
+  });
+}
+
+$(document).ready( () => {
+  $("#tweet-form").on("submit", function(event) {
+    event.preventDefault();
+    $.ajax({
+      method: 'POST',
+      url: "/tweets",
+      data: $(this).serialize()
+    })
+    .then(function (tweets) {
+      loadTweets(tweets);
+    });
+  });
+});
