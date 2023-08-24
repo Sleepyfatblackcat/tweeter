@@ -13,6 +13,7 @@ const escaper = function(str) {
 
 // Function to render tweets to main page
 const renderTweets = function(tweets) {
+  $('.tweet-container').empty();
   for (let i = 0; i < tweets.length; i++) {
     let $tweet = createTweetElement(tweets[i]);
     $('.tweet-container').prepend($tweet);
