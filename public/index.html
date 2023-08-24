@@ -41,33 +41,35 @@
       </div>
     </nav>
 
-    <header id="profile">
-      <div class="avatar">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <div class = "name">
-          <h2>Jack</h2>
-          <span>&nbspTran</span>
-      </div>
-    </header>
+    <div id="page">
+      <header id="profile">
+        <div class="avatar">
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <div class = "name">
+            <h2>Jack</h2>
+            <span>&nbspTran</span>
+        </div>
+      </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form id="tweet-form" action="/tweets" method="POST">
-          <p id="error"></p>
-          <label for="tweet-text"><strong>What are you humming about?<strong></label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div class="border"></div>
-          <div>
-            <input type="submit" value="Tweet">
-            <span class="counter" for="tweet-text">140</span>
-          </div>
-        </form>
-      </section>
-      <section class="tweet-container">
-      </section>
-    </main>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form id="tweet-form" action="/tweets" method="POST">
+            <p id="error"></p>
+            <label for="tweet-text"><strong>What are you humming about?<strong></label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="border"></div>
+            <div>
+              <input type="submit" value="Tweet">
+              <span class="counter" for="tweet-text">140</span>
+            </div>
+          </form>
+        </section>
+        <section class="tweet-container">
+        </section>
+      </main>
+    </div>
   </body>
 </html>

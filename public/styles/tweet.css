@@ -65,4 +65,5 @@ article footer .fa {
 
 article footer .fa:hover {
   color: rgb(255, 170, 0);
+  cursor:pointer;
 }
