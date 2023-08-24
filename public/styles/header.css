@@ -42,5 +42,6 @@
   .container {
     flex-grow: 2;
     margin-left: 1em;
+    width: 75%;
   }
 }
