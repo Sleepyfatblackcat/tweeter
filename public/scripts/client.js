@@ -49,9 +49,12 @@ const loadTweets = function() {
     method: 'GET',
     url: "/tweets"
   })
-    .then(function(tweets) {
-      renderTweets(tweets);
-    });
+  .then(function(tweets) {
+    renderTweets(tweets);
+  },
+  function () {
+    alert("Ajax GET request failed.");
+  });
 };
 
 $(document).ready(() => {
@@ -70,12 +73,15 @@ $(document).ready(() => {
         url: "/tweets",
         data: $(this).serialize()
       })
-        .then(function() {
-          $("#error").slideUp('slow').removeClass("active");
-          $("#tweet-text").val("");
-          $(".counter").text(140);
-          loadTweets();
-        });
+      .then(function() {
+        $("#error").slideUp('slow').removeClass("active");
+        $("#tweet-text").val("");
+        $(".counter").text(140);
+        loadTweets();
+      },
+      function () {
+        alert("Ajax POST request failed.");
+      });
     }
   });
   loadTweets();
