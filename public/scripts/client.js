@@ -61,7 +61,7 @@ $(document).ready(() => {
     // Tweet text validation
     if ($("#tweet-text").val().length > 140) {
       $("#error").text("⚠️Tweet is too long. Please keep within 140 character limit.⚠️").slideDown('slow').addClass("active");
-    } else if ($("#tweet-text").val() === "" || $("#tweet-text").val().length === null) {
+    } else if ($("#tweet-text").val().trim() === "" || $("#tweet-text").val().length === null) {
       $("#error").text("⚠️Tweet text is empty!⚠️").slideDown('slow').addClass("active");
     } else {
       // Ajax POST request to send tweet to database
@@ -72,6 +72,8 @@ $(document).ready(() => {
       })
         .then(function() {
           $("#error").slideUp('slow').removeClass("active");
+          $("#tweet-text").val("");
+          $(".counter").text(140);
           loadTweets();
         });
     }
