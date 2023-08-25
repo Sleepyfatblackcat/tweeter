@@ -42,6 +42,10 @@
   .container {
     flex-grow: 2;
     margin-left: 1em;
-    width: 75%;
+    width: 65%;
+  }
+  
+  main {
+    margin-right: 1em;
   }
 }
